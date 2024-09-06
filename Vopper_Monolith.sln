@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vopper_Gateway", "Vopper_Gateway\Vopper_Gateway.csproj", "{905F2EFB-84B2-420A-8601-96912CC843DE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{26136F97-8CBE-41F6-A479-C2EBCB0BF331}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Auth_Module", "Modules\Auth_Module\Auth_Module.csproj", "{8A1E6D38-BDFA-4A53-AA2F-35D39A543209}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "User_Module", "Modules\User_Module\User_Module.csproj", "{993EEBB7-9D5B-43CC-A4BC-1655100FF98C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{905F2EFB-84B2-420A-8601-96912CC843DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{905F2EFB-84B2-420A-8601-96912CC843DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{905F2EFB-84B2-420A-8601-96912CC843DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{905F2EFB-84B2-420A-8601-96912CC843DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A1E6D38-BDFA-4A53-AA2F-35D39A543209}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A1E6D38-BDFA-4A53-AA2F-35D39A543209}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A1E6D38-BDFA-4A53-AA2F-35D39A543209}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A1E6D38-BDFA-4A53-AA2F-35D39A543209}.Release|Any CPU.Build.0 = Release|Any CPU
+		{993EEBB7-9D5B-43CC-A4BC-1655100FF98C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{993EEBB7-9D5B-43CC-A4BC-1655100FF98C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{993EEBB7-9D5B-43CC-A4BC-1655100FF98C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{993EEBB7-9D5B-43CC-A4BC-1655100FF98C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8A1E6D38-BDFA-4A53-AA2F-35D39A543209} = {26136F97-8CBE-41F6-A479-C2EBCB0BF331}
+		{993EEBB7-9D5B-43CC-A4BC-1655100FF98C} = {26136F97-8CBE-41F6-A479-C2EBCB0BF331}
+	EndGlobalSection
+EndGlobal
