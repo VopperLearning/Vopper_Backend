@@ -2,6 +2,7 @@
 
 # Ignorar carpetas obj y su contenido
 **/obj/
+**/bin/
 .Modules/Auth_Module/obj
 
 # Ignorar archivos de NuGet
