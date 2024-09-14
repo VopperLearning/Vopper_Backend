@@ -1,1 +1,11 @@
 .vs/
+
+# Ignorar carpetas obj y su contenido
+**/obj/
+.Modules/Auth_Module/obj
+
+# Ignorar archivos de NuGet
+*.nuget.g.props
+*.nuget.dgspec.json
+*.nuget.cache
+
