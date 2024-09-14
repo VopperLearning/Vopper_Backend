@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using User_Module.User_service.ServiceInterface;
-using User_Module.User_core.Entities;
-using User_Module.User_core.Repository;
+using User_service.Interfaces;
+using User_core.Entities;
+using User_core.Repository;
 
-namespace User_Module.User_service.ServiceImplementation
+namespace User_service.ServiceImplementation
 {
     public class UserServiceImplement : IUserService
     {
@@ -16,30 +16,29 @@ namespace User_Module.User_service.ServiceImplementation
             _userRepository = userRepository;
         }
 
-        //TODO: Implement the rest of the methods
-        public Task CreateUserAsync(User user)
+        public async Task CreateUserAsync(User user)
         {
-            throw new NotImplementedException();
+            await _userRepository.CreateUserAsync(user);
         }
 
-        public Task DeleteUserAsync(Guid id)
+        public async Task DeleteUserAsync(Guid id)
         {
-            throw new NotImplementedException();
+            await _userRepository.DeleteUserAsync(id);
         }
 
-        public Task<IEnumerable<User>> GetAllUsersAsync()
+        public async Task<IEnumerable<User>> GetAllUsersAsync()
         {
-            throw new NotImplementedException();
+            return await _userRepository.GetAllUsersAsync();
         }
 
-        public Task<User> GetUserByIdAsync(Guid id)
+        public async Task<User> GetUserByIdAsync(Guid id)
         {
-            throw new NotImplementedException();
+            return await _userRepository.GetUserByIdAsync(id);
         }
 
-        public Task UpdateUserAsync(User user)
+        public async Task UpdateUserAsync(User user)
         {
-            throw new NotImplementedException();
+            await _userRepository.UpdateUserAsync(user);
         }
     }
 }

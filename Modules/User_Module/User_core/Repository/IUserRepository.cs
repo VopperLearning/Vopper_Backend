@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using User_Module.User_core.Entities;
+using User_core.Entities;
 
-namespace User_Module.User_core.Repository
+namespace User_core.Repository
 {
     public interface IUserRepository
     {

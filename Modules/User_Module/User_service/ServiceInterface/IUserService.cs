@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using User_Module.User_core.Entities;
+using User_core.Entities;
 
-namespace User_Module.User_service.ServiceInterface
+namespace User_service.Interfaces
 {
     public interface IUserService
     {
