@@ -32,7 +32,6 @@ namespace User_infrastructure.Persistence.Repository
             return user;
         }
 
-
         public async Task UpdateUserAsync(User user)
         {
             _context.Users.Update(user);
