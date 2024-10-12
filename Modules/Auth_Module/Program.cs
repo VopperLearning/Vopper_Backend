@@ -1,7 +1,26 @@
+using Auth_Module.Auth_Core.Repository;
+using Auth_Module.Auth_Infraestructure.Persistence;
+using Auth_Module.Auth_Infraestructure.Persistence.repository;
+using Auth_Module.Auth_Service.ServiceImpl;
+using Auth_Module.Auth_Service.ServiceInterface;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
+builder.Services.AddDbContext<AuthModelDbContext>(options =>
+{
+    options.UseMySql(builder.Configuration.GetConnectionString("DefaultConnection"), ServerVersion.AutoDetect(builder.Configuration.GetConnectionString("DefaultConnection")));
+});
+
+builder.Services.AddScoped<IAuth_Users, AuthRepository>();
+builder.Services.AddScoped<IAuthUser_Service, AuthService_Implement>();
+builder.Services.AddScoped<IGenerate_Code, Generate_Code>();
+builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
@@ -12,9 +31,11 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+    app.UseHttpsRedirection();
 }
 
 app.UseHttpsRedirection();
+app.MapControllers();
 
 var summaries = new[]
 {
