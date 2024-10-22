@@ -1,0 +1,14 @@
+.vs/
+
+# Ignorar carpetas obj y su contenido
+**/obj/
+**/bin/
+.Modules/User_Module/User_Module.csproj
+.Modules/Auth_Module/Auth_Module.csproj
+.Vopper_Gateway/Vopper_Gateway.csproj
+
+# Ignorar archivos de NuGet
+*.nuget.g.props
+*.nuget.dgspec.json
+*.nuget.cache
+
