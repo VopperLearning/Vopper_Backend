@@ -14,7 +14,7 @@ namespace Auth_Module.Auth_Infraestructure.Persistence
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            var connectionString = "server=localhost;database=VopperBD;user=root;password=root";
+            var connectionString = "server=host.docker.internal;database=VopperBD;user=root;password=root";
             optionsBuilder.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
         }
 
