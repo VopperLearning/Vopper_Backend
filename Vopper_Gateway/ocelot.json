@@ -1,0 +1,43 @@
+{
+    "Routes": [
+     {
+        "UpstreamPathTemplate": "/VopperApi/Auth/{everything}",
+        "UpstreamHttpMethod": [ "GET", "POST","PUT","DELETE"],
+       "DownstreamPathTemplate": "/api/auth/{everything}",
+       "DownstreamScheme": "http",
+       "DownstreamHostAndPorts": [
+         {
+           "Host": "localhost",
+           "Port": 5072
+         }
+       ]
+     },
+     {
+       "UpstreamPathTemplate": "/VopperApi/User/{everything}",
+       "UpstreamHttpMethod": [ "GET", "POST","PUT","DELETE"],
+       "DownstreamPathTemplate": "/api/User/{everything}",
+       "DownstreamScheme": "http",
+       "DownstreamHostAndPorts": [
+         {
+           "Host": "localhost",
+           "Port": 5204
+         }
+       ]
+     },{
+        "UpstreamPathTemplate": "/test",
+        "UpstreamHttpMethod": [ "GET", "POST" ],
+        "DownstreamPathTemplate": "/weatherforecast",
+        "DownstreamScheme": "http",
+        "DownstreamHostAndPorts": [
+          {
+            "Host": "localhost",
+            "Port": 5072
+          }
+        ]
+      }
+    ],
+    "GlobalConfiguration": {
+     "BaseUrl": "http://localhost:5175"
+    }
+}
+  
