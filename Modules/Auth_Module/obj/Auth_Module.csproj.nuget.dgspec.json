@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "S:\\Vopper_Backend\\Modules\\Auth_Module\\Auth_Module.csproj": {}
+    "S:\\Vopper\\Vopper_Backend\\Modules\\Auth_Module\\Auth_Module.csproj": {}
   },
   "projects": {
-    "S:\\Vopper_Backend\\Modules\\Auth_Module\\Auth_Module.csproj": {
+    "S:\\Vopper\\Vopper_Backend\\Modules\\Auth_Module\\Auth_Module.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "S:\\Vopper_Backend\\Modules\\Auth_Module\\Auth_Module.csproj",
+        "projectUniqueName": "S:\\Vopper\\Vopper_Backend\\Modules\\Auth_Module\\Auth_Module.csproj",
         "projectName": "Auth_Module",
-        "projectPath": "S:\\Vopper_Backend\\Modules\\Auth_Module\\Auth_Module.csproj",
+        "projectPath": "S:\\Vopper\\Vopper_Backend\\Modules\\Auth_Module\\Auth_Module.csproj",
         "packagesPath": "C:\\Users\\agred\\.nuget\\packages\\",
-        "outputPath": "S:\\Vopper_Backend\\Modules\\Auth_Module\\obj\\",
+        "outputPath": "S:\\Vopper\\Vopper_Backend\\Modules\\Auth_Module\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\agred\\AppData\\Roaming\\NuGet\\NuGet.Config"

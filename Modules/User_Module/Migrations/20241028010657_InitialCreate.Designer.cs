@@ -9,10 +9,10 @@ using User_infrastructure.Persistence;
 
 #nullable disable
 
-namespace User_infrastructure.Migrations
+namespace User_Module.Migrations
 {
-    [DbContext(typeof(UserDBContext))]
-    [Migration("20240914211603_InitialCreate")]
+    [DbContext(typeof(UserDBContextFactory))]
+    [Migration("20241028010657_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />

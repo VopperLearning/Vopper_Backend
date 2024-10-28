@@ -10,9 +10,9 @@ namespace User_infrastructure.Persistence.Repository
 {
     public class UserRepository : IUserRepository
     {
-        private readonly UserDBContext _context;
+        private readonly UserDBContextFactory _context;
 
-        public UserRepository(UserDBContext context)
+        public UserRepository(UserDBContextFactory context)
         {
             _context = context;
         }

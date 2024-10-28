@@ -8,10 +8,10 @@ using User_infrastructure.Persistence;
 
 #nullable disable
 
-namespace User_infrastructure.Migrations
+namespace User_Module.Migrations
 {
-    [DbContext(typeof(UserDBContext))]
-    partial class UserDBContextModelSnapshot : ModelSnapshot
+    [DbContext(typeof(UserDBContextFactory))]
+    partial class UserDBContextFactoryModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {

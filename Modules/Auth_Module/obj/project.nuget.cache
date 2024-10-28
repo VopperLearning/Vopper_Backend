@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "kv7DfmInsyc=",
+  "dgSpecHash": "ouFGh+PTOFk=",
   "success": true,
-  "projectFilePath": "S:\\Vopper_Backend\\Modules\\Auth_Module\\Auth_Module.csproj",
+  "projectFilePath": "S:\\Vopper\\Vopper_Backend\\Modules\\Auth_Module\\Auth_Module.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\agred\\.nuget\\packages\\azure.communication.email\\1.0.1\\azure.communication.email.1.0.1.nupkg.sha512",
     "C:\\Users\\agred\\.nuget\\packages\\azure.core\\1.34.0\\azure.core.1.34.0.nupkg.sha512",
