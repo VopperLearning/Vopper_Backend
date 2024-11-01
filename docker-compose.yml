@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  auth_module:
+    build:
+      context: ./Modules/Auth_Module
+      dockerfile: Dockerfile  # Dockerfile en la carpeta Auth_Module
+    expose:
+      - "5072:8080"
+    networks:
+      - vopper_network
+
+  user_module:
+    build:
+      context: ./Modules/User_Module
+      dockerfile: Dockerfile  # Dockerfile en la carpeta User_Module
+    expose:
+      - "5204:8080"
+    networks:
+      - vopper_network
+
+  gateway:
+    build:
+      context: ./Vopper_Gateway
+      dockerfile: Dockerfile  # Dockerfile en la carpeta Vopper_Gateway
+    ports:
+      - "5175:8080"  # Expone el puerto 5000
+    depends_on:
+      - auth_module
+      - user_module
+    networks:
+      - vopper_network
+
+networks:
+  vopper_network:
+    driver: bridge
