@@ -1,5 +1,5 @@
 services:
-  - type: postgres  # Cambia a mysql si es necesario; Render tiene soporte para MySQL
+  - type: web  # Cambia a mysql si es necesario; Render tiene soporte para MySQL
     name: vopper_db
     env: docker
     plan: free  # Cambia a otro plan si es necesario
