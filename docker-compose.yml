@@ -1,6 +1,19 @@
 version: '3.8'
 
 services:
+
+  db:
+    image: mysql:8.0  # Usa la versión 8.0 de MySQL
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword  # Cambia la contraseña del root
+      MYSQL_DATABASE: vopper_db         # Nombre de la base de datos
+      MYSQL_USER: vopper_user           # Usuario de la base de datos
+      MYSQL_PASSWORD: userpassword      # Contraseña del usuario                
+    networks:
+      - vopper_network
+    volumes:
+      - db_data:/var/lib/mysql          # Volumen para persistencia de datos
+
   auth_module:
     build:
       context: ./Modules/Auth_Module
@@ -9,6 +22,9 @@ services:
       - "5072:8080"
     networks:
       - vopper_network
+    depends_on:
+      - db  # Dependencia en el servicio de la base de datos
+
 
   user_module:
     build:
@@ -18,6 +34,8 @@ services:
       - "5204:8080"
     networks:
       - vopper_network
+    depends_on:
+      - db  # Dependencia en el servicio de la base de datos
 
   gateway:
     build:
@@ -31,6 +49,11 @@ services:
     networks:
       - vopper_network
 
+  
+
 networks:
   vopper_network:
     driver: bridge
+
+volumes:
+  db_data:

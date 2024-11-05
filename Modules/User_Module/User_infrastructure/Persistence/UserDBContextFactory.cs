@@ -13,7 +13,7 @@ namespace User_infrastructure.Persistence
        }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            var connectionString = "server=host.docker.internal;database=VopperBD;user=root;password=root";
+            var connectionString = "Server=db;Database=vopper_db;User=vopper_user;Password=userpassword;";
             optionsBuilder.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
         }
 

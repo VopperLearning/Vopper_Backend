@@ -14,8 +14,12 @@ RUN dotnet build "./User_Module.csproj" -c Release -o /app/build
 FROM build AS publish
 RUN dotnet publish "./User_Module.csproj" -c Release -o /app/publish
 
-FROM base AS final
-WORKDIR /app
+
+FROM build AS final
+WORKDIR /src/User_Module
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "User_Module.dll"]
+RUN dotnet tool install --global dotnet-ef
+ENV PATH="${PATH}:/root/.dotnet/tools"
+ENTRYPOINT ["sh", "-c", "dotnet ef database update && dotnet Auth_Module.dll"]
+
 
