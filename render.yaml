@@ -4,6 +4,7 @@ services:
     plan: free
     runtime: docker
     dockerfilePath: ./Modules/Auth_Module/Dockerfile
+    dockerContext: ./Modules/Auth_Module
     envVars:
       - key: PORT
         value: 5072
@@ -22,6 +23,7 @@ services:
     plan: free
     runtime: docker
     dockerfilePath: ./Modules/User_Module/Dockerfile
+    dockerContext: ./Modules/User_Module
     envVars:
       - key: PORT
         value: 5204
@@ -40,6 +42,7 @@ services:
     plan: free
     runtime: docker
     dockerfilePath: ./Vopper_Gateway/Dockerfile
+    dockerContext: ./Vopper_Gateway
     envVars:
       - key: PORT
         value: 5175
