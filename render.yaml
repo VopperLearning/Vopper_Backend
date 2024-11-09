@@ -1,0 +1,48 @@
+services:
+  - type: web
+    name: auth_module
+    runtime: docker
+    dockerfilePath: ./Modules/Auth_Module
+    envVars:
+      - KEY: PORT
+        value: 5072
+      - KEY: DB_HOST
+        value: db
+      - KEY: DB_PORT
+        value: 3306
+      - KEY: DB_USER
+        value: vopper_user
+      - KEY: DB_PASSWORD
+        value: userpassword
+      - KEY: DB_NAME
+        value: vopper_db
+
+  - type: web
+    name: user_module
+    runtime: docker
+    dockerfilePath: ./Modules/User_Module
+    envVars:
+      - KEY: PORT
+        value: 5204
+      - KEY: DB_HOST
+        value: db
+      - KEY: DB_PORT
+        value: 3306
+      - KEY: DB_USER
+        value: vopper_user
+      - KEY: DB_PASSWORD
+        value: userpassword
+      - KEY: DB_NAME
+        value: vopper_db
+
+  - type: web
+    name: gateway
+    runtime: docker
+    dockerfilePath: ./Vopper_Gateway
+    envVars:
+      - KEY: PORT
+        value: 5175
+      - KEY: AUTH_MODULE_URL
+        value: http://auth_module:5072
+      - KEY: USER_MODULE_URL
+        value: http://user_module:5204
