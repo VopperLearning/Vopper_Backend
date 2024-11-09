@@ -38,4 +38,18 @@ services:
         value: userpassword
       - key: DB_NAME
         value: vopper_db
+  
+  - type: web
+    name: gateway
+    plan: free
+    runtime: docker
+    dockerfilePath: ./Vopper_Gateway/Dockerfile
+    dockerContext: ./Vopper_Gateway
+    envVars:
+      - key: PORT
+        value: 5175
+      - key: AUTH_MODULE_URL
+        value: http://auth_module:5072
+      - key: USER_MODULE_URL
+        value: http://user_module:5204
  
