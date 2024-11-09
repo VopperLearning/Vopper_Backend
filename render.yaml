@@ -1,6 +1,7 @@
 services:
   - type: web
     name: auth_module
+    plan: free
     runtime: docker
     dockerfilePath: ./Modules/Auth_Module
     envVars:
@@ -18,6 +19,7 @@ services:
         value: vopper_db
   - type: web
     name: user_module
+    plan: free
     runtime: docker
     dockerfilePath: ./Modules/User_Module
     envVars:
@@ -35,6 +37,7 @@ services:
         value: vopper_db
   - type: web
     name: gateway
+    plan: free
     runtime: docker
     dockerfilePath: ./Vopper_Gateway
     envVars:
