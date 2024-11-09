@@ -6,7 +6,7 @@ EXPOSE 8080
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 # Copy csproj and restore as distinct layers
 WORKDIR /src/Auth_Module
-COPY ["./Auth_Module.csproj", "."]
+COPY ["./Modules/Auth_Module/Auth_Module.csproj", "."]
 RUN dotnet restore "./Auth_Module.csproj"
 COPY . .
 RUN dotnet build "./Auth_Module.csproj" -c Release -o /app/build

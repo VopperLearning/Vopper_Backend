@@ -6,7 +6,7 @@ EXPOSE 8080
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 # Copy csproj and restore as distinct layers
 WORKDIR /src/Vopper_Gateway
-COPY ["./Vopper_Gateway.csproj", "."]
+COPY ["./Vopper_Gateway/Vopper_Gateway.csproj", "."]
 RUN dotnet restore "./Vopper_Gateway.csproj"
 COPY . .
 RUN dotnet build "./Vopper_Gateway.csproj" -c Release -o /app/build
