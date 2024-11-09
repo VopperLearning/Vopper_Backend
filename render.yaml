@@ -18,4 +18,24 @@ services:
         value: userpassword
       - key: DB_NAME
         value: vopper_db
+  
+  - type: web
+    name: user_module
+    plan: free
+    runtime: docker
+    dockerfilePath: ./Modules/User_Module/Dockerfile
+    dockerContext: ./Modules/User_Module
+    envVars:
+      - key: PORT
+        value: 5204
+      - key: DB_HOST
+        value: db
+      - key: DB_PORT
+        value: 3306
+      - key: DB_USER
+        value: vopper_user
+      - key: DB_PASSWORD
+        value: userpassword
+      - key: DB_NAME
+        value: vopper_db
  
