@@ -9,12 +9,12 @@ WORKDIR /src/Vopper_Gateway
 COPY ["./Vopper_Gateway/Vopper_Gateway.csproj", "."]
 RUN dotnet restore "./Vopper_Gateway.csproj"
 COPY . .
-RUN dotnet build "./Vopper_Gateway.csproj" -c Release -o /app/build
+RUN dotnet build "./Vopper_Gateway.csproj" -c Release -o /app/Vopper_Gateway/build
 
 FROM build AS publish
-RUN dotnet publish "./Vopper_Gateway.csproj" -c Release -o /app/publish
+RUN dotnet publish "./Vopper_Gateway.csproj" -c Release -o /app/Vopper_Gateway/publish
 
 FROM base AS final
 WORKDIR /app
-COPY --from=publish /app/publish .
+COPY --from=publish /app/Vopper_Gateway/publish .
 ENTRYPOINT ["dotnet", "Vopper_Gateway.dll"]

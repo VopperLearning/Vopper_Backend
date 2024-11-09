@@ -9,11 +9,11 @@ WORKDIR /src/Auth_Module
 COPY ["./Modules/Auth_Module/Auth_Module.csproj", "."]
 RUN dotnet restore "./Auth_Module.csproj"
 COPY . .
-RUN dotnet build "./Auth_Module.csproj" -c Release -o /app/build
+RUN dotnet build "./Auth_Module.csproj" -c Release -o /app/Auth_Module/build
 
 
 FROM build AS publish
-RUN dotnet publish "./Auth_Module.csproj" -c Release -o /app/publish
+RUN dotnet publish "./Auth_Module.csproj" -c Release -o /app/Auth_Module/publish
 
 FROM build AS final
 WORKDIR /src/Auth_Module

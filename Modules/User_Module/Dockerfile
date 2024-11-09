@@ -9,15 +9,15 @@ WORKDIR /src/User_Module
 COPY ["./Modules/User_Module/User_Module.csproj", "."]
 RUN dotnet restore "User_Module.csproj"
 COPY . .
-RUN dotnet build "User_Module.csproj" -c Release -o /app/build
+RUN dotnet build "User_Module.csproj" -c Release -o /app/User_Module/build
 
 FROM build AS publish
-RUN dotnet publish "User_Module.csproj" -c Release -o /app/publish
+RUN dotnet publish "User_Module.csproj" -c Release -o /app/User_Module/publish
 
 
 FROM build AS final
 WORKDIR /src/User_Module
-COPY --from=publish /app/publish .
+COPY --from=publish /app/User_Module/publish .
 RUN dotnet tool install --global dotnet-ef
 ENV PATH="${PATH}:/root/.dotnet/tools"
 ENTRYPOINT ["sh", "-c", "dotnet ef database update && dotnet Auth_Module.dll"]
