@@ -52,4 +52,10 @@ services:
         value: http://auth_module:5072
       - key: USER_MODULE_URL
         value: http://user_module:5204
- 
+
+database:
+  - name: db
+    plan: free
+    databasename: vopper_db
+    user: vopper_user
+    
