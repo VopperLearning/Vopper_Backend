@@ -56,6 +56,6 @@ services:
 databases:
   - name: db
     plan: free
-    databasename: vopper_db
+    databaseName: vopper_db
     user: vopper_user
     
