@@ -53,7 +53,7 @@ services:
       - key: USER_MODULE_URL
         value: http://user_module:5204
 
-database:
+databases:
   - name: db
     plan: free
     databasename: vopper_db
