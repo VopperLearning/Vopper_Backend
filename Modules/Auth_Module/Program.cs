@@ -40,6 +40,10 @@ if (app.Environment.IsDevelopment())
     app.UseHttpsRedirection();
 }
 
+// Configura la aplicación para escuchar en el puerto especificado por la variable de entorno PORT.
+var port = Environment.GetEnvironmentVariable("PORT") ?? "5072"; // Usa 8080 como puerto predeterminado si PORT no está definida.
+app.Urls.Add($"http://0.0.0.0:{port}");
+
 app.UseHttpsRedirection();
 app.MapControllers();
 
