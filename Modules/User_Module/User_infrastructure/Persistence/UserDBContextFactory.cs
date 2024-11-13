@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.Configuration;
 using System.IO;
 using User_core.Entities;
+using Npgsql.EntityFrameworkCore.PostgreSQL;
 
 namespace User_infrastructure.Persistence
 {
@@ -13,8 +14,10 @@ namespace User_infrastructure.Persistence
        }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            var connectionString = "Server=db;Database=vopper_db;User=vopper_user;Password=userpassword;";
-            optionsBuilder.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
+           /* var connectionString = "Server=db;Database=vopper_db;User=vopper_user;Password=userpassword;";
+            optionsBuilder.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));*/
+             var connectionString  = "host=dpg-csp6vua3esus739fmd6g-a;port=5432;Database=vopper_db;Username=vopper_user;password=kLPXW1TsPgvcgm5CNsSKM8DbzhBN5TXY";
+             optionsBuilder.UseNpgsql(connectionString);
         }
 
          public DbSet<User> Users { get; set; }

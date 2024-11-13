@@ -10,9 +10,13 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddDbContext<UserDBContextFactory>(options => 
+/*builder.Services.AddDbContext<UserDBContextFactory>(options => 
     options.UseMySql(builder.Configuration.GetConnectionString("DefaultConnection"),
-    ServerVersion.AutoDetect(builder.Configuration.GetConnectionString("DefaultConnection"))));
+    ServerVersion.AutoDetect(builder.Configuration.GetConnectionString("DefaultConnection"))));*/
+
+builder.Services.AddDbContext<UserDBContextFactory>(options =>{
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"));
+});
 
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IUserService, UserServiceImplement>();
@@ -29,6 +33,10 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+// Configura la aplicación para escuchar en el puerto especificado por la variable de entorno PORT.
+var port = Environment.GetEnvironmentVariable("PORT") ?? "5204"; // Usa 8080 como puerto predeterminado si PORT no está definida.
+app.Urls.Add($"http://0.0.0.0:{port}");
 
 var summaries = new[]
 {
