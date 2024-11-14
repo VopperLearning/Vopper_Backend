@@ -7,8 +7,8 @@
        "DownstreamScheme": "http",
        "DownstreamHostAndPorts": [
          {
-           "Host": "auth_module",
-           "Port": 8080
+           "Host": "0.0.0.0",
+           "Port": 5072
          }
        ]
      },
@@ -19,8 +19,8 @@
        "DownstreamScheme": "http",
        "DownstreamHostAndPorts": [
          {
-           "Host": "user_module",
-           "Port": 8080
+           "Host": "0.0.0.0",
+           "Port": 5204
          }
        ]
      },{
