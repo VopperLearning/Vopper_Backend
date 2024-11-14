@@ -21,7 +21,7 @@ namespace User_service.ServiceImplementation
             await _userRepository.CreateUserAsync(user);
         }
 
-        public async Task DeleteUserAsync(Guid id)
+        public async Task DeleteUserAsync(long id)
         {
             await _userRepository.DeleteUserAsync(id);
         }
@@ -31,7 +31,7 @@ namespace User_service.ServiceImplementation
             return await _userRepository.GetAllUsersAsync();
         }
 
-        public async Task<User> GetUserByIdAsync(Guid id)
+        public async Task<User> GetUserByIdAsync(long id)
         {
             return await _userRepository.GetUserByIdAsync(id);
         }

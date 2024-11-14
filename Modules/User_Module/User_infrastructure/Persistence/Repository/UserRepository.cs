@@ -22,7 +22,7 @@ namespace User_infrastructure.Persistence.Repository
             return await _context.Users.ToListAsync();
         }
 
-        public async Task<User> GetUserByIdAsync(Guid id)
+        public async Task<User> GetUserByIdAsync(long id)
         {
             var user = await _context.Users.FindAsync(id);
             if (user == null)
@@ -38,7 +38,7 @@ namespace User_infrastructure.Persistence.Repository
             await _context.SaveChangesAsync();
         }
 
-        public async Task DeleteUserAsync(Guid id)
+        public async Task DeleteUserAsync(long id)
         {
             var user = await _context.Users.FindAsync(id);
             if (user != null)

@@ -8,10 +8,10 @@ namespace User_service.Interfaces
     public interface IUserService
     {
         Task<IEnumerable<User>> GetAllUsersAsync();
-        Task<User> GetUserByIdAsync(Guid id);
+        Task<User> GetUserByIdAsync(long id);
         Task CreateUserAsync(User user);
         Task UpdateUserAsync(User user);
-        Task DeleteUserAsync(Guid id);
+        Task DeleteUserAsync(long id);
 
     }
 }

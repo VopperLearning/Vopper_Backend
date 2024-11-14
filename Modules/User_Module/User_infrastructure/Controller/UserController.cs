@@ -25,7 +25,7 @@ namespace User_infrastructure.Controller
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<User>> GetUser(Guid id)
+        public async Task<ActionResult<User>> GetUser(long id)
         {
             var user = await _userService.GetUserByIdAsync(id);
             if (user == null)
@@ -43,7 +43,7 @@ namespace User_infrastructure.Controller
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateUser(Guid id, User user)
+        public async Task<IActionResult> UpdateUser(long id, User user)
         {
             if (id != user.Id)
             {
@@ -55,7 +55,7 @@ namespace User_infrastructure.Controller
         }
 
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteUser(Guid id)
+        public async Task<IActionResult> DeleteUser(long id)
         {
             await _userService.DeleteUserAsync(id);
             return NoContent();
