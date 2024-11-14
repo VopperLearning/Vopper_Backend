@@ -20,6 +20,6 @@ WORKDIR /src/User_Module
 COPY --from=publish /app/User_Module/publish .
 RUN dotnet tool install --global dotnet-ef
 ENV PATH="${PATH}:/root/.dotnet/tools"
-ENTRYPOINT ["sh", "-c", "dotnet ef database update && dotnet Auth_Module.dll"]
+ENTRYPOINT ["sh", "-c", "dotnet ef database update && dotnet User_Module.dll"]
 
 
