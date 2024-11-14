@@ -36,8 +36,13 @@ namespace Auth_Module.Auth_Infraestructure.Controller
             Auth_User user = await _authUser_Service.ConfirmEmail(Email);
             return Ok(user);
         }
-
         
+        [HttpPost("SendConfirmEmail")]
+        public async Task<IActionResult> SendConfirmEmail(string Email)
+        {
+            Auth_User user = await _authUser_Service.ConfirmEmail(Email);
+            return Ok(user);
+        }
         
     }
 }
