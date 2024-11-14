@@ -16,8 +16,8 @@ namespace User_infrastructure.Persistence
         {
            /* var connectionString = "Server=db;Database=vopper_db;User=vopper_user;Password=userpassword;";
             optionsBuilder.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));*/
-            var connectionString = "host=localhost;port=5433;Database=vopper;Username=postgres;password=root";
-             //var connectionString  = "host=dpg-csp6vua3esus739fmd6g-a;port=5432;Database=vopper_db;Username=vopper_user;password=kLPXW1TsPgvcgm5CNsSKM8DbzhBN5TXY";
+            //var connectionString = "host=localhost;port=5433;Database=vopper;Username=postgres;password=root";
+             var connectionString  = "host=dpg-csp6vua3esus739fmd6g-a;port=5432;Database=vopper_db;Username=vopper_user;password=kLPXW1TsPgvcgm5CNsSKM8DbzhBN5TXY";
              optionsBuilder.UseNpgsql(connectionString);
         }
 
